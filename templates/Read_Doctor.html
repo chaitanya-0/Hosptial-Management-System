@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block containt%}
+
+{%include 'nav.html'%}
+<br>
+{%for i in read%}
+<div class="card bg-dark text-light">
+    <div class="card-body">
+      <h5 class="card-title">{{i.Name}}</h5>
+      <p class="card-text">{{i.Age}}</p>
+      <p class="card-text">{{i.Specialist}}</p>
+      <a href="{%url 'Update_Doctor' i.id%}"> update</a>
+    </div>
+    <hr>
+    {%endfor%}
+    {%endblock%}

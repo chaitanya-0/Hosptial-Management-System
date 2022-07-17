@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+{%block containt%}
+{%include 'navbar.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>HMS - Django</title>
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+  </style>
+  <title>Hospital</title>
+</head>
+
+<body>
+  <br><br>
+  <center>
+    <h3 class='alert alert-success' style="margin-bottom:0px;">About Us !</h3>
+  </center>
+  <div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+    <h1 class="display-4">Hello</h1>
+    <p class="lead">A service dedicated to Hospital Admin, Doctor and Patient. Everyone can appreciate the ability to get the care they want, especially from the top professionals in the industry. From the latest technologies to free consultations, we offer it all. We want you to look and feel great about yourself because you matter. Improve your health with routine services or set up a one-time appointment. We do medical care of all kinds, with many team members having specializations that can address all your healthcare needs.</p>
+    <hr class="my-4">
+    <img src="{%static 'doctor.jpg'%}" class="d-block w-100" alt="...">
+    <p>Explore our Website.</p>
+  </div>
+</body>
+
+
+</html>
+{%include 'footer.html'%}
+      
+{%endblock%}

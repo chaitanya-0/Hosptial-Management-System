@@ -1,0 +1,33 @@
+#content {
+  min-height: calc(100vh - 130px);
+}
+#footer {
+  height: 50px;
+}
+
+.padded,
+.padded-below {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1%;
+}
+
+.padded-below {
+  padding-bottom: 1%;
+}
+
+.form-card {
+  /* display: flex; */
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-grow: 3;
+  width: 90%;
+  margin-top: 10px;
+}
+
+.flex-container {
+    flex-grow: 0.4;
+}

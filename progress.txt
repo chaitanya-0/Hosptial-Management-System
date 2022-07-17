@@ -1,0 +1,14 @@
+Already added:
+
+	1. Styled Forms (Ambulence, Appointment) and added some relevant fields.
+	2. Added Time stamps to ambulance and appointment
+
+
+What to add:
+
+	1. Sign in for regular users, so we can automatically assign if the user is a new case or an old case or follow up.
+	2. Add a special sign in/sign up for admins.
+	3. Add another page with the list of all past ambulance and appointment data.
+
+	On the admin side, 
+	Make the ambulance requests and appointment request more readable

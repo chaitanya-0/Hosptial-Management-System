@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block containt%}
+{%include 'nav.html'%}
+<br>
+
+<h1>Add New RoomService Employee</h1>
+<form method="POST" >
+    {%load crispy_forms_tags%}
+    {%csrf_token%}
+    {{form|crispy}}
+    <button type="submit" class="btn btn-outline-primary">Add doctor</button>
+</form>
+{%endblock%}

@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%block containt%}
+{%include 'navbar.html'%}
+<br><br>
+<div class="card bg-primary text-light">
+    <div class="card-body">
+      Your appointment has been confirmed.!
+    </div>
+  </div>
+  {%load static%}
+  <img src="{%static 'confirm.gif'%}" class="d-block w-100" alt="...">
+{%include 'footer.html'%}
+
+{%endblock%}
