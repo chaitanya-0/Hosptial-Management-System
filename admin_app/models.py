@@ -51,7 +51,7 @@ class Room_Service(models.Model):
 
 
 class admin_user(models.Model):
-    user = models.ForeignKey(User, to_field="username")
+    user = models.ForeignKey(User, to_field="username", on_delete=models.CASCADE)
     isadmin = models.BooleanField(default=False)
     
     def __str__(self):

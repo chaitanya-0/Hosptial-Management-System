@@ -1,15 +1,15 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from . forms import *
 
 
 def Home(request):
-    return render(request,"home.html")
+    return render(request, "home.html")
 
 
 def Request_Abmulance(request):
-    if request.method=="POST":
+    if request.method == "POST":
         form = AmbulanceForm(request.POST)
         if form.is_valid():
             form.save()
@@ -17,28 +17,27 @@ def Request_Abmulance(request):
             # messages.success(request,"done")
     else:
         form = AmbulanceForm()
-    return render(request,"ambulance.html",{"form":form  })
-
+    return render(request, "ambulance.html", {"form": form})
 
 
 def SignUp(request):
-    if request.method=="POST":
+    if request.method == "POST":
         form = Registration(request.POST)
         if form.is_valid():
             form.save()
             return redirect("Home")
-            
+
     else:
         form = Registration()
-    return render(request,"registration.html",{"form":form  })
+    return render(request, "registration.html", {"form": form})
 
 
 def Reach_Ambulance(request):
-    return render(request,"Reach_Ambulance.html")
+    return render(request, "Reach_Ambulance.html")
 
 
 def Appointment(request):
-    if request.method=="POST":
+    if request.method == "POST":
         form = AppointmentForm(request.POST)
         if form.is_valid():
             form.save()
@@ -47,11 +46,8 @@ def Appointment(request):
 
     else:
         form = AppointmentForm()
-    return render(request,"appointment.html",{"form":form})
+    return render(request, "appointment.html", {"form": form})
 
 
 def Appointment_Confirm(request):
-    return render(request,"Appointment_confirm.html")
-
-
-
+    return render(request, "Appointment_confirm.html")

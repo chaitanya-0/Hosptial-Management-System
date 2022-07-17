@@ -1,11 +1,11 @@
 from django.shortcuts import render,redirect
 from app.models import Ambulance
+from . import models
 from app.models import Appointment
-
-# Create your views here.
 from . forms import *
 from django.contrib import messages
-
+from django.conf import settings
+# Create your views here.
 
 
 def Admin_Home(request):
