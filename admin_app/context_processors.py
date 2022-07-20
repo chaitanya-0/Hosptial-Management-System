@@ -8,7 +8,8 @@ def check_user_priviledge(request):
         data = list(data)
         check_dict = next((item for item in data if item["user_id"] == username), None)
         print(check_dict)
-        print(data)
-        return {'is_user_admin': check}
-    else:
-        return {'is_user_admin':check}
+        if check_dict:
+            check=True
+            return {'is_user_admin': check}  
+             
+    return {'is_user_admin': check}

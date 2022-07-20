@@ -17,6 +17,7 @@ class Ambulance(models.Model):
     Location = models.CharField(max_length=20)
     Disease = models.ForeignKey(Reason, on_delete=models.CASCADE)
     date_time = models.DateTimeField(auto_now_add=True)
+    dispatched = models.BooleanField(default=False)
 
     def __str__(self):
         return self.Patient_Name
@@ -41,6 +42,7 @@ class Appointment(models.Model):
     Location = models.CharField(max_length=20)
     Reason = models.CharField(max_length=200)
     date_time = models.DateTimeField(auto_now_add=True)
+    seen = models.BooleanField(default=False)
 
     def __str__(self):
         return self.Patient_Name

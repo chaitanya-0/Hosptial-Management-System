@@ -1,8 +1,8 @@
 {%extends 'base.html'%} {%block containt%} {%include 'nav.html'%}
 <br />
-<h1>Active Appointment Requests</h1>
-{%for i in read%}
-<div id="content">
+<h1>Appointment History</h1>
+{%for i in read reversed%}
+<div id="content-admin">
   <div class="card bg-dark text-light">
     <div class="card-body">
       <h5 class="card-title">
@@ -24,7 +24,6 @@
       <p class="card-text">
         <span style="font-weight: bold">Time of contact: </span>{{i.date_time}}
       </p>
-      <a class="btn btn-primary" href="{%url 'toggle_appointment' i.id%}"> Respond </a>
     </div>
     <hr />
     {%endfor%}

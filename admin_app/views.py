@@ -1,10 +1,8 @@
 from django.shortcuts import render,redirect
 from app.models import Ambulance
-from . import models
 from app.models import Appointment
 from . forms import *
 from django.contrib import messages
-from django.conf import settings
 # Create your views here.
 
 
@@ -102,13 +100,29 @@ def Update_Room_Service(request,id):
 
 
 def Read_Ambulance(request):
-    read=Ambulance.objects.all()
+    read=Ambulance.objects.filter(dispatched = False)
     return render(request,"Read_Ambulance.html",{"read":read})    
 
+def Read_Ambulance_History(request):
+    read = Ambulance.objects.filter(dispatched=True)
+    return render(request, "Read_Ambulance_History.html",{"read":read})
 
 def Read_Appointment(request):
-    read=Appointment.objects.all()
+    read=Appointment.objects.filter(seen=False)
     return render(request,"Read_Appointment.html",{"read":read})  
+
+def Read_Appointment_History(request):
+    read = Appointment.objects.filter(seen=False)
+    return render(request, "Read_Appointment_History.html", {"read":read})
 
 def Payment(request):
     return render(request,"Payment.html")    
+
+
+def toggle_ambulance(request, id):
+    Ambulance.objects.filter(id=id).update(dispatched=True)
+    return redirect(Read_Ambulance)
+
+def toggle_appointment(request, id):
+    Appointment.objects.filter(id=id).update(seen=True)
+    return redirect(Read_Appointment)

@@ -19,7 +19,11 @@ urlpatterns = [
     path("Read_Room_Service/",views.Read_Room_Service,name="Read_Room_Service"),
     path("Update_Room_Service/<int:id>",views.Update_Room_Service,name="Update_Room_Service"),
     path("Read_Ambulance/",views.Read_Ambulance,name="Read_Ambulance"),
+    path("Read_Ambulance_History/",views.Read_Ambulance_History,name="Read_Ambulance_History"),
     path("Read_Appointment/",views.Read_Appointment,name="Read_Appointment"),
+    path("Read_Appointment_History/",views.Read_Appointment_History,name="Read_Appointment_History"),
+    path("toggle_ambulance/<int:id>",views.toggle_ambulance,name="toggle_ambulance"),
+    path("toggle_appointment/<int:id>",views.toggle_ambulance,name="toggle_appointment"),
     path("Payment",views.Payment,name="Payment"),
 
 ]

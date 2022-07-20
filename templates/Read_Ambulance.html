@@ -1,7 +1,8 @@
 {%extends 'base.html'%} {%block containt%} {%include 'nav.html'%}
 <br />
+<h1><strong>Active Ambulance Requests</strong></h1>
 {%for i in read%}
-<div id="content">
+<div id="content-admin">
   <div class="card bg-dark text-light">
     <div class="card-body">
       <h5 class="card-title">
@@ -12,7 +13,7 @@
         <span style="font-weight: bold">Age: </span>{{i.Patient_Age}}
       </p>
       <p class="card-text">
-        <span style="font-weight: bold">Contact </span>{{i.Patient_Contact}}
+        <span style="font-weight: bold">Contact: </span>{{i.Patient_Contact}}
       </p>
       <p class="card-text">
         <span style="font-weight: bold">Location: </span>{{i.Location}}
@@ -23,6 +24,7 @@
       <p class="card-text">
         <span style="font-weight: bold">Time of contact: </span>{{i.date_time}}
       </p>
+      <a class = "btn btn-danger" href="{%url 'toggle_ambulance' i.id%}"> Respond </a>
     </div>
     <hr />
     {%endfor%}
