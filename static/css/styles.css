@@ -5,6 +5,12 @@
   height: 50px;
 }
 
+.center{
+  left: 35%;
+  top : 35%;
+  position: absolute;
+}
+
 .padded,
 .padded-below {
   padding-left: 5%;
@@ -30,4 +36,12 @@
 
 .flex-container {
     flex-grow: 0.4;
+}
+
+.wrapper {
+  text-align: left;
+  height: auto;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }

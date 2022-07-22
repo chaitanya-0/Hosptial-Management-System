@@ -112,7 +112,7 @@ def Read_Appointment(request):
     return render(request,"Read_Appointment.html",{"read":read})  
 
 def Read_Appointment_History(request):
-    read = Appointment.objects.filter(seen=False)
+    read = Appointment.objects.filter(seen=True)
     return render(request, "Read_Appointment_History.html", {"read":read})
 
 def Payment(request):

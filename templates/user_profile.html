@@ -1,0 +1,27 @@
+{%extends 'base.html'%} {%block containt%} {%include 'navbar.html'%} {%load static%}
+
+<div class="wrapper" id="content">
+  {%if user_obj%}
+    <br />
+    <div class="card mb-3">
+      <div class="card-body">
+        <p class="card-text"><strong>First Name: </strong>{{user_obj.first_name}}</p>
+        <p class="card-text"><strong>Last Name:</strong>{{user_obj.last_name}}</p>
+        <p class="card-text"><strong>Contact No.: </strong>{{user_obj.contact_no}}</p>
+        <p class="card-text"><strong>Address: </strong>{{user_obj.address}}</p>
+        <p class="card-text">
+          <a href="{%url "usr_appointments"%}"><small class="text-muted">View past appointments</small></a>
+        </p>
+      </div>
+    </div>
+    {%else%}
+    <div class="card mb-3">
+      <div class="card-body center">
+        <h2 class="card-text">Looks like you haven't created a profile yet. Create one 
+          <a href="{%url 'profile-create'%}">here</a>.</h2>
+      </div>
+    </div>
+  {%endif%}
+</div>
+<br>
+{%include 'footer.html'%} {%endblock%}

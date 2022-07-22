@@ -1,0 +1,20 @@
+{%extends 'base.html'%} {%block containt%} {%include 'navbar.html'%}
+
+<div id="content">
+  {%for i in usr_appoint%}
+  <div class="wrapper">
+    <br />
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Date of Appointment: {{i.date_time}}</h5>
+        <p class="card-text">{{i.subtitle}}</p>
+        <p class="card-text">Appointment Type: {{i.Appointment_type}}</p>
+        <p class="card-text">Reason: {{i.Reason}}</p>
+      </div>
+    </div>
+  </div>
+  {%empty%}
+  <h1 id="text-empty" class="center">No appointments on record.</h1>
+  {%endfor%}
+</div>
+{%include 'footer.html'%} {%endblock%}

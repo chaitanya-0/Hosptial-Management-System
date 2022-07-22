@@ -1,0 +1,46 @@
+{%extends 'base.html'%} {%block containt%} {%include 'navbar.html'%} {%load static%}
+
+<link rel="stylesheet" href="{%static 'css/styles.css'%}" />
+
+<br>
+<div class="form-card wrapper" id="content">
+  <div class="card flex-container">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">
+          Please enter accurate details
+        </h6>
+        <form
+          action="{%url 'profile-create'%}"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          {%load crispy_forms_tags%} {%csrf_token%}
+          <!-- {{form|crispy}} -->
+          <div class="form-row">
+            <div class="form-group col-md-6 mb-0">
+              {{ form.first_name|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+              {{ form.last_name|as_crispy_field }}
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12 mb-0">
+              {{ form.contact_no|as_crispy_field }}
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12 mb-0">
+              {{ form.address|as_crispy_field }}
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Confirm Profile</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%include 'footer.html'%} {%endblock%}

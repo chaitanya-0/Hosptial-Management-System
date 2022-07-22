@@ -7,7 +7,6 @@ def check_user_priviledge(request):
         username = request.user.username
         data = list(data)
         check_dict = next((item for item in data if item["user_id"] == username), None)
-        print(check_dict)
         if check_dict:
             check=True
             return {'is_user_admin': check}  

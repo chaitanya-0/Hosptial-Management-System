@@ -42,16 +42,18 @@
     background-color: #f1f1f1;
   }
 
-  /* Show the dropdown menu on hover
-  <!-- .dropdown:hover .dropdown-content {
+ /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
     display: block;
   }
-  --> */
+
     
-    /* Change the background color of the dropdown button when the dropdown content is shown
-    <!-- .dropdown:hover .dropbtn {
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+ .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
-  -- > .amb {
+
+
+  .amb {
     margin-right: 11px;
-  } */
+  } 

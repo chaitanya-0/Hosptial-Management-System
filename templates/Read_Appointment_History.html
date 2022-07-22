@@ -19,14 +19,18 @@
         <span style="font-weight: bold">Location: </span>{{i.Location}}
       </p>
       <p class="card-text">
-        <span style="font-weight: bold">Disease: </span>{{i.Disease}}
+        <span style="font-weight: bold">Reason: </span>{{i.Reason}}
       </p>
       <p class="card-text">
         <span style="font-weight: bold">Time of contact: </span>{{i.date_time}}
+      </p>
+      <p class="card-text">
+        <span style="font-weight: bold">User ID: </span>{{i.req_by}}
       </p>
     </div>
     <hr />
     {%endfor%}
   </div>
 </div>
+
 {%include 'footer.html'%} {%endblock%}

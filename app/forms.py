@@ -6,53 +6,46 @@ from django.contrib.auth.models import User
 
 class Registration(UserCreationForm):
     class Meta:
-
         model = User
         fields = "username", "password1", "password2"
     username = forms.CharField(widget=forms.TextInput())
     password1 = forms.CharField(widget=forms.PasswordInput())
     password2 = forms.CharField(widget=forms.PasswordInput())
 
-
-class ReasonForm(forms.ModelForm):
+class ProfileCreate(forms.ModelForm):
     class Meta:
-        model = Reason
-        fields = "__all__"
+        model = UserProfile
+        fields = ["address", "contact_no", "first_name", "last_name"]
+
+    first_name  = forms.CharField(widget=forms.TextInput())
+    last_name = forms.CharField(widget=forms.TextInput())
+    contact_no = forms.IntegerField(widget=forms.TimeInput)
+    address = forms.CharField(widget=forms.Textarea({'placeholder' : 'Enter your full address'}))
 
 
 class AmbulanceForm(forms.ModelForm):
     class Meta:
         model = Ambulance
-        fields = ("Patient_Name",
+        fields = ["Patient_Name",
                   "Patient_Age",
                   "Patient_Contact",
                   "Location",
                   "Disease"
-                  )
-        disease_data = Reason.objects.all()
-        CHOICES = disease_data.values('reason')
-        widgets = {
+                  ]
             # attrs= {'class': 'list-group-item'}
-            'Patient_Name': forms.TextInput(),
-            'Patient_Age': forms.TextInput(),
-            'Patient_Contact': forms.TextInput(),
-            'Location': forms.TextInput(),
-            'Disease': forms.Select(choices=CHOICES),
-        }
-
-
-class DiseaseForm(forms.ModelForm):
-    class Meta:
-        model = Disease
-        fields = "__all__"
-
+        Patient_Name = forms.TextInput()
+        Patient_Age = forms.TextInput(),
+        Patient_Contact = forms.TextInput(),
+        Location = forms.Textarea(),
+        Disease= forms.CharField(),
 
 class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
-        fields = ("Patient_Name",
+        fields = ["Patient_Name",
                   "Appointment_type",
                   "Patient_Age",
                   "Patient_Contact",
                   "Location",
-                  "Reason")
+                  "Reason",
+                  "req_by"]

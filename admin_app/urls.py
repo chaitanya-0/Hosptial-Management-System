@@ -23,7 +23,7 @@ urlpatterns = [
     path("Read_Appointment/",views.Read_Appointment,name="Read_Appointment"),
     path("Read_Appointment_History/",views.Read_Appointment_History,name="Read_Appointment_History"),
     path("toggle_ambulance/<int:id>",views.toggle_ambulance,name="toggle_ambulance"),
-    path("toggle_appointment/<int:id>",views.toggle_ambulance,name="toggle_appointment"),
+    path("toggle_appointment/<int:id>",views.toggle_appointment,name="toggle_appointment"),
     path("Payment",views.Payment,name="Payment"),
 
 ]
