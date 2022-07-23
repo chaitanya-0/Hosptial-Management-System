@@ -5,14 +5,14 @@ from django.db import models
 
 
 class Speciality(models.Model):
-    speciality = models.CharField(max_length=20)
+    speciality = models.CharField(max_length=200)
 
     def __str__(self):
         return self.speciality
 
 
 class Doctor(models.Model):
-    Name = models.CharField(max_length=20)
+    Name = models.CharField(max_length=200)
     Age = models.IntegerField()
     Specialist = models.ForeignKey(Speciality, on_delete=models.CASCADE)
 
@@ -25,7 +25,7 @@ class Shift(models.Model):
 
 
 class Nurse(models.Model):
-    Name = models.CharField(max_length=20)
+    Name = models.CharField(max_length=200)
     Age = models.IntegerField()
     Department = models.CharField(max_length=20)
     Shift = models.ForeignKey(Shift, on_delete=models.CASCADE)
@@ -34,26 +34,23 @@ class Nurse(models.Model):
         return self.Name
 
 
-class Gender(models.Model):
-    gender = models.CharField(max_length=10)
-
-    def __str__(self):
-        return self.gender
-
-
 class Room_Service(models.Model):
-    Name = models.CharField(max_length=20)
+    GENDER = (
+        ("M", "Male"), ("F", "Female"), ("O", "Other")
+        )
+    Name = models.CharField(max_length=200)
     Age = models.IntegerField()
-    Gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
+    Gender = models.CharField(choices=GENDER, max_length=20)
 
     def __str__(self):
         return self.Name
 
 
 class admin_user(models.Model):
-    user = models.ForeignKey(User, to_field="username", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, to_field="username",
+                             on_delete=models.CASCADE)
     isadmin = models.BooleanField(default=False)
-    
+
     def __str__(self):
         if self.isadmin:
             return 'Admin'

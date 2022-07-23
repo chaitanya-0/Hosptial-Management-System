@@ -1,9 +1,9 @@
 {%extends 'base.html'%} {%block containt%} {%include 'nav.html'%}
 <br />
-<h1>Appointment History</h1>
-{%for i in read reversed%}
-<div id="content-admin">
-  <div class="card bg-dark text-light">
+<h1 style="text-align:center">Appointment History</h1><br>
+<div id="content">
+  {%for i in read reversed%}
+  <div class="card bg-dark text-light wrapper">
     <div class="card-body">
       <h5 class="card-title">
         <span style="font-weight: bold">Patient's Name: </span
@@ -29,6 +29,9 @@
       </p>
     </div>
     <hr />
+    {%empty%}
+    <br>
+    <h2 class="wrapper" style="text-align:center">The list is empty.</h2>
     {%endfor%}
   </div>
 </div>

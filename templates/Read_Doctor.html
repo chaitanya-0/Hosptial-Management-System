@@ -2,14 +2,14 @@
 <br />
 <div id="content-admin">
   {%for i in read%}
-  <div class="card bg-dark text-light">
+  <div class="card bg-dark text-light wrapper">
     <div class="card-body">
-      <h5 class="card-title">{{i.Name}}</h5>
-      <p class="card-text">{{i.Age}}</p>
-      <p class="card-text">{{i.Specialist}}</p>
-      <a href="{%url 'Update_Doctor' i.id%}"> update</a>
+      <h5 class="card-title">Name: {{i.Name}}</h5>
+      <p class="card-text">Age: {{i.Age}}</p>
+      <p class="card-text">Speciality: {{i.Specialist}}</p>
+      <a class="btn btn-primary" href="{%url 'Update_Doctor' i.id%}">Update</a>
     </div>
     <hr />
-    {%endfor%} {%endblock%}
   </div>
 </div>
+{%endfor%} {%include 'footer.html'%} {%endblock%}

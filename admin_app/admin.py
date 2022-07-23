@@ -21,7 +21,6 @@ admin.site.register(Speciality)
 admin.site.register(Shift)
 
 admin.site.register(Nurse)
-admin.site.register(Gender)
 admin.site.register(Room_Service)
 admin.site.register(admin_user)
 # admin.site.register(admin_user, admin_display)

@@ -3,14 +3,17 @@ from . models import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+CHOICES_APPOINT = (
+    ("NC", "New Case"), ("FolU", "Follow Up"), ("OC", "Old Case")
+)
 
 class Registration(UserCreationForm):
     class Meta:
         model = User
-        fields = "username", "password1", "password2"
+        fields = ["username", "password1", "password2"]
     username = forms.CharField(widget=forms.TextInput())
-    password1 = forms.CharField(widget=forms.PasswordInput())
-    password2 = forms.CharField(widget=forms.PasswordInput())
+    password1 = forms.CharField(widget=forms.PasswordInput(), label="Password")
+    password2 = forms.CharField(widget=forms.PasswordInput(), label="Confirm Password")
 
 class ProfileCreate(forms.ModelForm):
     class Meta:
@@ -48,4 +51,4 @@ class AppointmentForm(forms.ModelForm):
                   "Patient_Contact",
                   "Location",
                   "Reason",
-                  "req_by"]
+                  ]

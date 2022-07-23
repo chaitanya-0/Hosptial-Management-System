@@ -6,7 +6,7 @@
 <div id="content" class="wrapper">
     <div class="card flex-container">
       <div class="card-body">
-        <h5 class="card-title text-primary">Update Doctor Data</h5>
+        <h5 class="card-title text-primary">Update RS Employee Data</h5>
         <form method="POST">
           {%load crispy_forms_tags%} {%csrf_token%}
           <!-- {{form|crispy}} -->
@@ -20,11 +20,11 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-7 mb-0">
-              {{ update.Specialist|as_crispy_field }}
+              {{ update.Gender|as_crispy_field }}
             </div>
           </div>
           <button type="submit" class="btn btn-outline-primary">
-            Update Doctor
+            Update RS Employee
           </button>
         </form>
       </div>

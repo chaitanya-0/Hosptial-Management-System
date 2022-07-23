@@ -1,9 +1,9 @@
 {%extends 'base.html'%} {%block containt%} {%include 'nav.html'%}
 <br />
-<h1>Active Appointment Requests</h1>
-{%for i in read%}
+<h1 style="text-align:center">Active Appointment Requests</h1>
 <div id="content">
-  <div class="card bg-dark text-light">
+  {%for i in read%}
+  <div class="card bg-dark text-light wrapper">
     <div class="card-body">
       <h5 class="card-title">
         <span style="font-weight: bold">Patient's Name: </span
@@ -19,7 +19,7 @@
         <span style="font-weight: bold">Location: </span>{{i.Location}}
       </p>
       <p class="card-text">
-        <span style="font-weight: bold">Disease: </span>{{i.Disease}}
+        <span style="font-weight: bold">Reason: </span>{{i.Reason}}
       </p>
       <p class="card-text">
         <span style="font-weight: bold">Time of contact: </span>{{i.date_time}}
@@ -27,6 +27,9 @@
       <a class="btn btn-primary" href="{%url 'toggle_appointment' i.id%}"> Respond </a>
     </div>
     <hr />
+    {%empty%}
+    <br>
+    <h2 class="wrapper" style="text-align:center">The list is empty.</h2>
     {%endfor%}
   </div>
 </div>

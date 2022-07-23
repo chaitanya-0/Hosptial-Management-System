@@ -1,40 +1,25 @@
-{%extends 'base.html'%}
-{%block containt%}
-{%include 'navbar.html'%}
-<br>
-<br>
-<br>
-<br>
+{%extends 'base.html'%} {%block containt%} {%include 'navbar.html'%}
 <style>
-    .card {
-        margin: 0 auto; 
-        float: none; 
-        margin-bottom: 10px; 
-        border-color: deepskyblue;
-}
-
+  .card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    border-color: deepskyblue;
+  }
 </style>
-
-<div class="card align-item-center bg-dark" style="width: 20rem;">
+<div id="content">
+  <div class="card div-center bg-dark">
     <div class="card-body">
-      <h5 class="card-title text-primary">Login  Form</h5>
-      <form method="POST" class=" text-primary">
-        {%load crispy_forms_tags%}
-        {%csrf_token%}
-        {{form|crispy}}
-
-        <br>
-        <br>
-        <button type="submit" class="btn btn-outline-primary align-center">SignUp</button>
-    </form>
+      <h5 class="card-title text-light">Sign Up</h5>
+      <form method="POST" class="text-light">
+        {%load crispy_forms_tags%} {%csrf_token%} {{form|crispy}}
+        <br />
+        <button type="submit" class="btn btn-outline-primary align-center">
+          SignUp
+        </button>
+      </form>
+    </div>
   </div>
-
-  </div>
-
-  <br>
-  <br>
-  <br>
-  <br>
-{%include 'footer.html'%}
-{%endblock%}
-
+</div>
+<br />
+{%include 'footer.html'%} {%endblock%}

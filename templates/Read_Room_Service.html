@@ -1,13 +1,21 @@
 {%extends 'base.html'%} {%block containt%} {%include 'nav.html'%}
 <br />
-{%for i in read%}
-<div id="content">
-  <div class="card bg-dark text-light">
+<div id="content-admin">
+  {%for i in read%}
+  <div class="card bg-dark text-light wrapper">
     <div class="card-body">
-      <h5 class="card-title"><span style="font-weight: bold;">Name: </span>{{i.Name}}</h5>
-      <p class="card-text"><span style="font-weight: bold;">Age: </span>{{i.Age}}</p>
-      <p class="card-text"><span style="font-weight: bold;">Gender: </span>{{i.Gender}}</p>
-      <a href="{%url 'Update_Room_Service' i.id%}"> Update</a>
+      <h5 class="card-title">
+        <span style="font-weight: bold">Name: </span>{{i.Name}}
+      </h5>
+      <p class="card-text">
+        <span style="font-weight: bold">Age: </span>{{i.Age}}
+      </p>
+      <p class="card-text">
+        <span style="font-weight: bold">Gender: </span>{{i.Gender}}
+      </p>
+      <a class="btn btn-primary" href="{%url 'Update_Room_Service' i.id%}"
+        >Update</a
+      >
     </div>
     <hr />
     {%endfor%}

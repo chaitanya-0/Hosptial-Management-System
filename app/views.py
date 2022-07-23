@@ -37,6 +37,7 @@ def Reach_Ambulance(request):
 
 
 def Appointment_view(request):
+    form = AppointmentForm()
     if request.method == "POST":
         form = AppointmentForm(request.POST)
         if form.is_valid():
@@ -45,9 +46,6 @@ def Appointment_view(request):
             form.save()
             # messages.success(request,f'Ambulance will arrive soon.')
             return redirect(Appointment_Confirm)
-
-    else:
-        form = AppointmentForm()
     return render(request, "appointment.html", {"form": form})
 
 
@@ -65,7 +63,7 @@ def usr_profile(request):
         return redirect(profile_create)
 
 def usr_appointments(request):
-    appoint_list = Appointment.objects.all()
+    appoint_list = Appointment.objects.filter(req_by = request.user)
     print(appoint_list)
     return render(request,"user_appointments.html", {"usr_appoint": appoint_list})
 
@@ -79,5 +77,5 @@ def profile_create(request):
             form.save()
             # messages.success(request,f'Profile has been Created.')
             return redirect(usr_profile)
-    #the user is expected to be already authenticated, if not this view won't be accessible through the templates
+    # the user is expected to be already authenticated, if not this view won't be accessible through the templates
     return render(request, "Profile_Create.html", {"form": form})

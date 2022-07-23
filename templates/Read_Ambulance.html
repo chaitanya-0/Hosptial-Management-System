@@ -1,9 +1,9 @@
 {%extends 'base.html'%} {%block containt%} {%include 'nav.html'%}
 <br />
-<h1><strong>Active Ambulance Requests</strong></h1>
-{%for i in read%}
-<div id="content-admin">
-  <div class="card bg-dark text-light">
+<h1 style="text-align: center"><strong>Active Ambulance Requests</strong></h1>
+<div id="content">
+  {%for i in read%}
+  <div class="card bg-dark text-light wrapper">
     <div class="card-body">
       <h5 class="card-title">
         <span style="font-weight: bold">Patient's Name: </span
@@ -24,10 +24,16 @@
       <p class="card-text">
         <span style="font-weight: bold">Time of contact: </span>{{i.date_time}}
       </p>
-      <a class = "btn btn-danger" href="{%url 'toggle_ambulance' i.id%}"> Respond </a>
+      <a class="btn btn-danger" href="{%url 'toggle_ambulance' i.id%}">
+        Respond
+      </a>
     </div>
     <hr />
-    {%endfor%}
   </div>
+  {%empty%}
+  <br>
+  <h2 class="wrapper" style="text-align:center">The list is empty.</h2>
+  {%endfor%}
 </div>
+<br>
 {%include 'footer.html'%} {%endblock%}
