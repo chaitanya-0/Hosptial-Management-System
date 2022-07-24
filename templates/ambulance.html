@@ -1,7 +1,8 @@
 {%extends 'base.html'%} {%block containt%} {%include 'navbar.html'%}
 <!-- padded padded-below -->
+
 <div id="content" class="form-card">
-  <div class="card flex-container">
+  <div class="card flex-container wrapper">
     <div class="card-body">
       <h5 class="card-title text-danger">Emergency Ambulance Request</h5>
       <h6 class="card-subtitle mb-2 text-muted">
@@ -11,23 +12,23 @@
         {%load crispy_forms_tags%} {%csrf_token%}
         <!-- {{form|crispy}} -->
         <div class="form-row">
-          <div class="form-group col-md-4 mb-0">
+          <div class="form-group col-md-8 mb-0">
             {{ form.Patient_Name|as_crispy_field }}
           </div>
-          <div class="form-group col-md-1 mb-0">
+          <div class="form-group col-md-4 mb-0">
             {{ form.Patient_Age|as_crispy_field }}
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-4 mb-0">
+          <div class="form-group col-md-8 mb-0">
             {{ form.Patient_Contact|as_crispy_field }}
           </div>
-          <div class="form-group col-md-1 mb-0">
+          <div class="form-group col-md-4 mb-0">
             {{ form.Disease|as_crispy_field }}
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-5 mb-0">
+          <div class="form-group col-md-12 mb-0">
             {{ form.Location|as_crispy_field }}
           </div>
         </div>
@@ -42,17 +43,18 @@
         <strong>Emergency Instructions</strong>
       </h2>
       <p class="text-primary padded">
-        1.)Stay on the line with 911 and follow emergency instructions.<br />
-        2.)Stay calm and try to keep the patient calm.<br />
-        3.)Don't move a patient who was injured in an automobile accident or
+        1. Stay on the line with 911 and follow emergency instructions.<br />
+        2. Stay calm and try to keep the patient calm.<br />
+        3. Don't move a patient who was injured in an automobile accident or
         fall, or who was found unconscious.<br />
-        4.)If the patient is cold, cover them with a blanket.<br />
-        5.)Don't give an injured person anything to eat or drink (unless
+        4. If the patient is cold, cover them with a blanket.<br />
+        5. Don't give an injured person anything to eat or drink (unless
         instructed by the 911 dispatcher).<br />
-        6.)Have someone watch for the ambulance and show the crew how to get to
+        6. Have someone watch for the ambulance and show the crew how to get to
         the patient.<br />
       </p>
     </div>
   </div>
 </div>
+
 {%include 'footer.html'%} {%endblock%}
