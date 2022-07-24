@@ -1,5 +1,9 @@
 #content-admin{
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 105px);
+}
+
+body {
+  background-image: url("/static/admin-background.jpg");
 }
 
 /* Style The Dropdown Button */
@@ -57,3 +61,31 @@
   .amb {
     margin-right: 11px;
   } 
+
+  .grid-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  @media (min-width: 900px) {
+    .grid-wrapper {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .grid-wrapper .btn {
+    width: 12rem;
+    height: 4rem;
+  }
+  
+  .col {
+    padding: 0;
+  }
+  

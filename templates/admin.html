@@ -1,8 +1,93 @@
-{%extends 'base.html'%}
-{%block containt%}
-{%include 'nav.html'%}
-{%load static%}
-<img src="{%static 'hospital3.jpg'%}" class="d-block w-100" alt="...">
-{%include 'footer.html'%}
+{%extends 'base.html'%} {%block containt%} {%load static%}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{%static 'css/admin_styles.css'%}"
+/>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+  <a class="navbar-brand" href="{%url 'Admin_Home'%}">
+    Welcome to the Admin Portal</a
+  >
+</nav>
+<div id="content-admin">
+<div class="grid-wrapper">
+  <div class="dropdown entry">
+    <button
+      class="dropbtn btn btn-secondary dropdown-toggle btn-block"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Doctor
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="{%url 'Add_Doctor'%}">Add Doctor</a>
+      <a class="dropdown-item" href="{%url 'Read_Doctor'%}">See Doctors</a>
+    </div>
+  </div>
 
-{%endblock%}
+  <div class="dropdown entry">
+    <button
+      class="dropbtn btn btn-secondary dropdown-toggle btn-block"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Nurse
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="{%url 'Add_Nurse'%}">Add Nurse</a>
+      <a class="dropdown-item" href="{%url 'Read_Nurse'%}">See Nurses</a>
+    </div>
+  </div>
+  <div class="dropdown entry">
+    <button
+      class="dropbtn btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Room Service
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="{%url 'Add_Room_Service'%}">
+        Add RS employee</a
+      >
+      <a class="dropdown-item" href="{%url 'Read_Room_Service'%}"
+        >See RS Employee</a
+      >
+    </div>
+  </div>
+  <div class="entry">
+    <a class="btn btn-primary amb btn-block" href="{%url 'Read_Ambulance'%}">
+      Active Ambulance Requests
+    </a>
+  </div>
+  <div class="entry">
+    <a class="btn btn-primary amb btn-block" href="{%url 'Read_Appointment'%}"
+      >Active Appointment Requests</a
+    >
+  </div>
+  <div class="entry">
+    <a
+      class="btn btn-primary amb btn-block"
+      href="{%url 'Read_Ambulance_History'%}"
+      >Ambulance History
+    </a>
+  </div>
+  <div class="entry">
+    <a
+      class="btn btn-primary amb btn-block"
+      href="{%url 'Read_Appointment_History'%}"
+      >Appointment History</a
+    >
+  </div>
+</div>
+</div>
+{%include 'footer.html'%} {%endblock%}

@@ -2,13 +2,15 @@
 <br />
 <div id="content-admin">
   {%for i in read%}
-  <div class="card bg-dark text-light wrapper">
-    <div class="card-body">
-      <h5 class="card-title">Name: {{i.Name}}</h5>
-      <p class="card-text">Age: {{i.Age}}</p>
-      <p class="card-text">Department: {{i.Department}}</p>
-      <p class="card-text">Shift: {{i.Shift}}</p>
-      <a class="btn btn-primary" href="{%url 'Update_Nurse' i.id%}">Update</a>
+  <div class="wrapper">
+    <div class="card bg-dark text-light">
+      <div class="card-body">
+        <h5 class="card-title">Name: {{i.Name}}</h5>
+        <p class="card-text">Age: {{i.Age}}</p>
+        <p class="card-text">Department: {{i.Department}}</p>
+        <p class="card-text">Shift: {{i.Shift}}</p>
+        <a class="btn btn-primary" href="{%url 'Update_Nurse' i.id%}">Update</a>
+      </div>
     </div>
     <hr />
   </div>

@@ -2,6 +2,7 @@
   min-height: calc(100vh - 130px);
 }
 #footer {
+  margin-top: 10px;
   height: 50px;
 }
 
@@ -44,6 +45,7 @@
   width: 500px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5px;
 }
 
 .div-center{
